@@ -14,85 +14,21 @@
 
     <div class="div_productos">
 
-
+        {% for producto in productos %}
 
         <div class="card div_productos_internos" style="width: 18rem;">
-            <img src="{% static 'Tienda/img/a.jpg' %}" class="card-img-top" alt="...">
+            <img src="{{producto.imagen.url}}" class="card-img-top" alt="...">
             <hr>
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <p class="card-text">{{producto.descripcion}}.</p>
+                <p>₡ {{producto.precio}}</p>
                 <hr>
                 <a href="#" class="btn btn-primary">Agregar al carro</a>
             </div>
         </div>
 
-        <div class="card div_productos_internos" style="width: 18rem;">
-            <img src="{% static 'Tienda/img/a.jpg' %}" class="card-img-top" alt="...">
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <hr>
-                <a href="#" class="btn btn-primary">Agregar al carro</a>
-            </div>
-        </div>
-
-        <div class="card div_productos_internos" style="width: 18rem;">
-            <img src="{% static 'Tienda/img/s.jpg' %}" class="card-img-top" alt="...">
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <hr>
-                <a href="#" class="btn btn-primary">Agregar al carro</a>
-            </div>
-        </div>
-
-        <div class="card div_productos_internos" style="width: 18rem;">
-            <img src="{% static 'Tienda/img/s.jpg' %}" class="card-img-top" alt="...">
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <hr>
-                <a href="#" class="btn btn-primary">Agregar al carro</a>
-            </div>
-        </div>
-
-        <div class="card div_productos_internos" style="width: 18rem;">
-            <img src="{% static 'Tienda/img/Logo.png' %}" class="card-img-top" alt="...">
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <hr>
-                <a href="#" class="btn btn-primary">Agregar al carro</a>
-            </div>
-        </div>
-
-        <div class="card div_productos_internos" style="width: 18rem;">
-            <img src="{% static 'Tienda/img/Logo.png' %}" class="card-img-top" alt="...">
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <hr>
-                <a href="#" class="btn btn-primary">Agregar al carro</a>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 
