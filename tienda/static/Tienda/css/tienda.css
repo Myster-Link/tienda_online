@@ -1,0 +1,22 @@
+main{
+    margin: 10px 100px;
+}
+.div_h2{
+    border-bottom: 1px solid;
+}
+.div_h2 h2{
+    margin: 0;
+    font-size: 25px;
+}
+
+.div_productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.div_productos_internos{
+    margin:10px;
+}
+.div_productos_internos img{
+
+}

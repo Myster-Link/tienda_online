@@ -2,7 +2,114 @@
 
 {% load static %}
 
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'Tienda/css/tienda.css' %}">
+{% endblock %}
+
 {% block main %}
 
+    <div class="div_h2">
+        <h2>Destacados Semanales</h2>
+    </div>
+
+    <div class="div_productos">
+
+
+
+        <div class="card div_productos_internos" style="width: 18rem;">
+            <img src="{% static 'Tienda/img/a.jpg' %}" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <hr>
+                <a href="#" class="btn btn-primary">Agregar al carro</a>
+            </div>
+        </div>
+
+        <div class="card div_productos_internos" style="width: 18rem;">
+            <img src="{% static 'Tienda/img/a.jpg' %}" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <hr>
+                <a href="#" class="btn btn-primary">Agregar al carro</a>
+            </div>
+        </div>
+
+        <div class="card div_productos_internos" style="width: 18rem;">
+            <img src="{% static 'Tienda/img/s.jpg' %}" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <hr>
+                <a href="#" class="btn btn-primary">Agregar al carro</a>
+            </div>
+        </div>
+
+        <div class="card div_productos_internos" style="width: 18rem;">
+            <img src="{% static 'Tienda/img/s.jpg' %}" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <hr>
+                <a href="#" class="btn btn-primary">Agregar al carro</a>
+            </div>
+        </div>
+
+        <div class="card div_productos_internos" style="width: 18rem;">
+            <img src="{% static 'Tienda/img/Logo.png' %}" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <hr>
+                <a href="#" class="btn btn-primary">Agregar al carro</a>
+            </div>
+        </div>
+
+        <div class="card div_productos_internos" style="width: 18rem;">
+            <img src="{% static 'Tienda/img/Logo.png' %}" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <hr>
+                <a href="#" class="btn btn-primary">Agregar al carro</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+    </div>
 
 {% endblock %}
