@@ -1,0 +1,39 @@
+{% extends 'Tienda_OnlineApp/plantilla_home.html' %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'Login/css/login.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<form action="{% url 'login' %}" method="POST" class="form_login">
+
+    {% csrf_token %}
+
+    <h2>Iniciar Sesion</h2>
+
+    <hr>
+
+    <div>
+        <label for="id_username">Usuario:</label>
+        <br>
+        <input type="text" name="username" id="id_username">
+    </div>
+    <div>
+        <label for="">Contraseña:</label>
+        <br>
+        <input type="password" name="password" id="id_password">
+    </div>
+
+    <hr>
+
+    <div>
+        <input type="submit" class="btn btn-secondary" value="Iniciar Sesion">
+    </div>
+
+</form>
+
+
+{% endblock %}

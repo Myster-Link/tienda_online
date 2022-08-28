@@ -1,0 +1,30 @@
+.form_register{
+    background: #277BC0;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.form_register h2{
+    font-size: 40px;
+}
+.form_register input{
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px
+}
+.form_register button{
+    width: 250px;
+    margin: 10px;
+    font-size: 20px;
+}
+.form_register label{
+    font-size: 20px;
+}

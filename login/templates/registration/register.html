@@ -1,0 +1,57 @@
+{% extends 'Tienda_OnlineApp/plantilla_home.html' %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'Login/css/register.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<form action="" method="POST" class="form_register">
+
+    {% csrf_token %}
+
+    <h2>Registrarse</h2>
+    <hr>
+
+    <div>
+        <label for="id_usuario">Usuario:</label>
+        <br>
+        <input type="text" name="username" id="id_usuario">
+    </div>
+
+    <div>
+        <label for="id_email">Email:</label>
+        <br>
+        <input type="text" name="email" id="id_email">
+    </div>
+
+    <div>
+        <label for="id_first_name">Nombre:</label>
+        <br>
+        <input type="text" name="first_name" id="id_first_name">
+    </div>
+
+    <div>
+        <label for="id_last_name">Apellido:</label>
+        <br>
+        <input type="text" name="last_name" id="id_last_name">
+    </div>
+
+    <div>
+        <label for="id_password">Contraseña:</label>
+        <br>
+        <input type="password" name="password" id="id_password">
+    </div>
+
+    <hr>
+
+    <div>
+        <input type="submit" class="btn btn-secondary" value="Register" style="margin:10px;">
+    </div>
+
+</form>
+
+
+{% endblock %}

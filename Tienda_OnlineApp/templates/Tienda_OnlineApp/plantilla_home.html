@@ -40,15 +40,36 @@
 
         <div>
             <ul class="ul_login">
+
+                {% if request.user.is_authenticated %}
+
+                <li class="li_perfil">
+                    <p class="p_usuario ">Usuario: {{request.user.username}}</p>
+                </li>
+
+                <li class="li_perfil"> 
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle btn_cuenta" btn_cuenta type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Mi Cuenta
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Perfil</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                {% else %}
+
                 <li>
-                    <button type="button" class="btn btn-secondary btn_login">Iniciar Sesion</button>
+                    <a href="{% url 'login' %}" class="btn btn-secondary btn_login">Iniciar Sesion</a>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-secondary btn_login">Registrarse</button>
+                    <a href="{% url 'register' %}" class="btn btn-secondary btn_login">Registrarse</a>
                 </li>
-                <li>
-                    <a href="#" class="btn btn-secondary btn_login">Saber Mas</a>
-                </li>
+
+                {% endif %}
             </ul>
         </div>
 

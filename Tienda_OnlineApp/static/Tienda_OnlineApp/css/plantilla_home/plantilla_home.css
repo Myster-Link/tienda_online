@@ -4,6 +4,15 @@
   font-family: "Roboto", sans-serif;
 }
 /* -----------HEADER----------- */
+.p_usuario {
+  color: #fff;
+}
+.li_perfil{
+  margin: 5px 20px 0 0 ;
+}
+.btn_cuenta{
+  padding: 0  20px;
+}
 .ul_login {
   display: flex;
   list-style: none;
