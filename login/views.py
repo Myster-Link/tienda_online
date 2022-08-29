@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
-from .forms import *
 from django.contrib import messages
 
 # Create your views here.
@@ -24,13 +23,3 @@ def register(request):
         return redirect('login')
 
     return render(request, 'registration/register.html')
-
-
-def login(request):
-
-    form = FormLogin()
-
-    for msg in form.error_messages:
-        messages.error(request, form.error.messages[msg])
-
-    return render(request, 'registration/login.html', {'form': form})
