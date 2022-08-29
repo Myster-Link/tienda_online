@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nc@g#)7&cdm2hi-2)^yvnx26-lhben(t0%c^w4@x3$7s(i7-y&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Tienda_OnlineApp',
     'login',
     'tienda',
+    'carro',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'carro.context_processor.importe_total_carro',
             ],
         },
     },

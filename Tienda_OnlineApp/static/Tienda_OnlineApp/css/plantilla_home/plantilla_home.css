@@ -30,6 +30,9 @@
 .nav_header a {
   text-decoration: none;
 }
+.a_h1{
+  color: #fff;
+}
 .btn_login {
   padding: 0;
   margin: 5px;
@@ -47,17 +50,6 @@
 .btn_search:hover {
   background: #a89508;
   color: #fff;
-}
-.carrito {
-  background: #6c6b6b;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-}
-.carrito:hover {
-  background: #000;
-  color: #fff;
-  border-radius: 5px;
 }
 /* -----------FIN HEADER----------- */
 

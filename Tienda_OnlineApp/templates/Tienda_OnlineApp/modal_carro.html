@@ -1,0 +1,75 @@
+<div class="modal fade" id="ModalProductos" tabindex="-1" aria-labelledby="ModalProductosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalProductosLabel">TU CARRITO DE COMPRA</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="4" class="text-center">
+                                <i class="fa-solid fa-clipboard-list"></i> Lista de Productos
+                            </th>
+                        </tr>
+
+                        <tr class="text-center">
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% if request.session.carro.items %}
+                        {% for key, value in request.session.carro.items %}
+                        <tr class="text-center">
+                            <td>{{value.nombre}}</td>
+                            <td>{{value.cantidad}}</td>
+                            <td>
+                                ₡ {{value.precio}}
+                            </td>
+                            <td>
+                                <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success"><i
+                                        class="fa-solid fa-plus"></i></a>
+                                <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger"><i
+                                        class="fa-solid fa-minus"></i></a>
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+
+                        {% else %}
+
+                        <tr>
+                            <td colspan="4">
+                                <div class="alert alert-danger text-center">
+                                    <p>Sin Productos!!!</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {% endif %}
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <strong>Total: ₡ {{importe_total_carro}}</strong>
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>

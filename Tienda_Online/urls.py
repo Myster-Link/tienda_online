@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts/logout', views.LogoutView.as_view(), name='logout'),
     path('accounts/register', include('login.urls')),
     path('', include('tienda.urls')),
+    path('carro/', include('carro.urls')),
 ]
 # Esto es para agregar una ruta para mostrar las imagenes
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
