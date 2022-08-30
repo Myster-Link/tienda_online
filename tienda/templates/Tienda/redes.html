@@ -1,0 +1,34 @@
+{% extends 'Tienda_OnlineApp/plantilla_home.html' %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'Tienda/css/tienda.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="div_h2">
+    <h2>Destacados Semanales</h2>
+</div>
+
+<div class="div_productos">
+
+    {% for cate in categorias %}
+
+    {% if cate.categoria_links == 1 %}
+
+    <p>{{cate.nombre}}</p>
+    
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+
+<div>
+    <hr>
+    {% include 'Tienda/paginator.html' %}
+</div>
+
+{% endblock %}

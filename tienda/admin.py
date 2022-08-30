@@ -7,7 +7,7 @@ class CamposDate(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
 
 
-
+admin.site.register(CategoriasLinks, CamposDate)
 admin.site.register(CategoriasProducto, CamposDate)
 admin.site.register(Proveedor, CamposDate)
 admin.site.register(Producto, CamposDate)

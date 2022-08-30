@@ -33,3 +33,26 @@ def tienda(request):
     }
 
     return render(request, 'Tienda/tienda.html', data)
+
+def redes(request):
+
+    productos = Producto.objects.all()
+    categoria = CategoriasProducto.objects.all()
+
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(productos, 5)
+        productos = paginator.page(page)
+
+    except:
+        raise Http404
+
+    data = {
+        'entity': productos,
+        'paginator': paginator,
+        'categorias':categoria
+    }
+
+    return render(request, 'Tienda/redes.html', data)
+
