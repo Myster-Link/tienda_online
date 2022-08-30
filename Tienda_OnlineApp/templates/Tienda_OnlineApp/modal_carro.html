@@ -5,7 +5,8 @@
                 <h5 class="modal-title" id="ModalProductosLabel">TU CARRITO DE COMPRA</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body table-responsive">
+
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -30,7 +31,7 @@
                             <td>{{value.nombre}}</td>
                             <td>{{value.cantidad}}</td>
                             <td>
-                                ₡ {{value.precio}}
+                                ₡{{value.precio}}
                             </td>
                             <td>
                                 <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success"><i
@@ -59,7 +60,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="4">
-                                <strong>Total: ₡ {{importe_total_carro}}</strong>
+                                <strong>Total: ₡{{importe_total_carro}}</strong>
                             </td>
                         </tr>
                     </tfoot>

@@ -8,7 +8,7 @@
   color: #fff;
 }
 .li_perfil{
-  margin: 5px 20px 0 0 ;
+  margin: 10px 20px 0 0 ;
 }
 .btn_cuenta{
   padding: 0  20px;
@@ -19,9 +19,11 @@
   justify-content: right;
   background: #1a213c;
   margin: 0;
+  border-bottom: 1px solid #fff;
 }
 .nav_header {
   display: flex;
+  flex-wrap: wrap;
   background-color: #1a213c;
   color: #fff;
   justify-content: space-around;
@@ -30,12 +32,15 @@
 .nav_header a {
   text-decoration: none;
 }
+.div_navheader{
+  margin: 10px;
+}
 .a_h1{
   color: #fff;
 }
 .btn_login {
   padding: 0;
-  margin: 5px;
+  margin: 10px 20px;
 }
 .input_search {
   padding: 5px;
@@ -78,3 +83,96 @@
   background: rgb(212, 87, 87);
 }
 /* -----------FIN NAV----------- */
+
+/* NAV RESPOSIVE */
+
+.include_headerResponsive{
+  display: none;
+}
+
+.div_main_nav_responsive{
+  display: flex;
+  flex-wrap: wrap;
+  background: #11468f;
+}
+
+.nav_offcanvas{
+  background: #11468f;
+  color: #fff;
+}
+.btn_bars_nav{
+  margin: 10px;
+}
+
+.ul_nav_responsive{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.li_nav_responsive{
+  margin: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+.a_nav_responsive{
+  text-decoration: none;
+  color: #fff;
+  padding: 0 10px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.a_nav_responsive:hover{
+  background: #fff;
+  color: #000;
+}
+.div_footer_nav{
+  display: flex;
+  margin: 0 20px;
+}
+
+/* FIN NAV RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .include_headerPincipal{
+    display: none;
+  }
+  .include_headerResponsive{
+    display: block;
+  }
+}
+@media (max-width: 970px) {
+  .input_search{
+    width: 400px;
+  }
+}
+@media (max-width: 760px) {
+  .input_search{
+    width: 300px;
+  }
+}
+@media (max-width: 670px) {
+  .input_search{
+    width: 200px;
+  }
+}
+@media (max-width: 560px) {
+  .input_search{
+    width: 150px;
+  }
+}
+@media (max-width: 510px) {
+  .input_search{
+    width: 300px;
+  }
+}
+@media (max-width: 440px) {
+  .input_search{
+    width: 200px;
+  }
+}

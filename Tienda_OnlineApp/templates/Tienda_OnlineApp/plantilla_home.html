@@ -63,61 +63,23 @@
                 {% else %}
 
                 <li>
-                    <a href="{% url 'login' %}" class="btn btn-secondary btn_login">Iniciar Sesion</a>
+                    <a href="{% url 'login' %}" class="btn btn-secondary btn_login"><i class="fa-solid fa-user"></i>
+                        Iniciar Sesion</a>
                 </li>
                 <li>
-                    <a href="{% url 'register' %}" class="btn btn-secondary btn_login">Registrarse</a>
+                    <a href="{% url 'register' %}" class="btn btn-secondary btn_login"><i
+                            class="fa-solid fa-pen-to-square"></i> Registrarse</a>
                 </li>
 
                 {% endif %}
             </ul>
         </div>
 
-        <nav class="nav_header">
-            <div>
-                <a href="{% url 'tienda' %}" class="a_h1">
-                    <h1>Ecommerce</h1>
-                </a>
-            </div>
-
-            <div class="">
-                <form class="d-flex" role="search">
-                    <input class="input_search" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn_search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
-
-            <div>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalProductos">
-                    <i class="fa-solid fa-cart-shopping"></i> Productos: ₡ {{importe_total_carro}}
-                </button>
-            </div>
-        </nav>
-
+        {% include 'Tienda_OnlineApp/header_principal.html' %}
+        {% include 'Tienda_OnlineApp/header_responsive.html' %}
+        {% include 'Tienda_OnlineApp/modal_carro.html' %}
     </header>
 
-    {% include 'Tienda_OnlineApp/modal_carro.html' %}
-
-    <nav class="nav_links">
-        <ul class="ul_nav">
-            <li>
-                <a href="#" class="active_nav">OFERTAS & MÁS </a>
-            </li>
-            <li>
-                <a href="#">COMPUTO</a>
-            </li>
-            <li>
-                <a href="#">SEGURIDAD</a>
-            </li>
-            <li>
-                <a href="#">MECANICA</a>
-            </li>
-            <li>
-                <a href="#">OFICINA</a>
-            </li>
-
-        </ul>
-    </nav>
 
     <aside>
         {% block aside %}

@@ -16,13 +16,14 @@
 
     {% for producto in entity %}
 
-    <div class="card div_productos_internos" style="width: 18rem;">
-        <img src="{{producto.imagen.url}}" class="card-img-top" alt="...">
+    <div class="card div_productos_internos text-center" style="width: 13em;">
+        <a href="#">
+            <img src="{{producto.imagen.url}}" class="card-img-top img_card" alt="...">
+        </a>
         <hr>
         <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
-            <p class="card-text">{{producto.descripcion}}.</p>
-            <p>₡ {{producto.precio}}</p>
+            <p>₡{{producto.precio}}</p>
         </div>
 
         <div class="card-footer text-center">

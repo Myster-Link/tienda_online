@@ -1,0 +1,75 @@
+<div class="include_headerResponsive">
+
+    <nav class="nav_header">
+        <div class="div_navheader">
+            <a href="{% url 'tienda' %}" class="a_h1">
+                <h1>AutoServicio San Pedro</h1>
+            </a>
+        </div>
+
+    </nav>
+
+    <div class="div_main_nav_responsive">
+        <button class="btn btn-primary btn_bars_nav" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="div_navheader">
+            <form class="d-flex" role="search">
+                <input class="input_search" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn_search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <div class="div_navheader">
+            <button type="button" class="btn btn-success btn_modal_carro" data-bs-toggle="modal"
+                data-bs-target="#ModalProductos">
+                <i class="fa-solid fa-cart-shopping"></i> Productos: ₡ {{importe_total_carro}}
+            </button>
+        </div>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start nav_offcanvas" data-bs-scroll="true" tabindex="-1"
+        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+                Lista de Categorias:
+            </h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+
+        <div class="offcanvas-body">
+            
+            <nav>
+                <ul class="ul_nav_responsive">
+                    <li class="li_nav_responsive">
+                        <a href="{% url 'tienda' %}" class="active_nav a_nav_responsive">OFERTAS & MÁS </a>
+                    </li>
+                    <li class="li_nav_responsive">
+                        <a href="#" class="a_nav_responsive">COMPUTO</a>
+                    </li>
+                    <li class="li_nav_responsive">
+                        <a href="#" class="a_nav_responsive">SEGURIDAD</a>
+                    </li>
+                    <li class="li_nav_responsive">
+                        <a href="#" class="a_nav_responsive">MECANICA</a>
+                    </li>
+                    <li class="li_nav_responsive">
+                        <a href="#" class="a_nav_responsive">OFICINA</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <hr>
+        <div class="offcanvas-footer div_footer_nav">
+            <p>Fecha: {{fechaActual}}</p>
+        </div>
+    </div>
+
+</div>

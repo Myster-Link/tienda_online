@@ -20,6 +20,10 @@ def register(request):
         user.last_name = apellido
         user.save()
 
+        #messages.add_message(request, messages.SUCCESS, 'Usuario creado')
+
         return redirect('login')
 
     return render(request, 'registration/register.html')
+
+
