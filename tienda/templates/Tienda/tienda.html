@@ -32,6 +32,7 @@
             <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
         </div>
     </div>
+
     {% endif %}
 
     {% endfor %}
@@ -55,7 +56,11 @@
         <hr>
         <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
-            <p>₡{{producto.precio}}</p>
+            <p>
+                <span style="text-decoration: line-through; color: red;">₡{{producto.precio}}</span> 
+                &nbsp;
+                ₡{{producto.precio_descuento}}
+            </p>
         </div>
 
         <div class="card-footer text-center">

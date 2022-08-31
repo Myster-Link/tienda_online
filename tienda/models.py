@@ -1,4 +1,3 @@
-from xmlrpc.client import boolean
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -22,7 +21,8 @@ class CategoriasProducto(models.Model):
     nombre = models.CharField(max_length=30, unique=True)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now=True)
-    categoria_links = models.ManyToManyField(CategoriasLinks)
+    categoria_links = models.ForeignKey(
+        CategoriasLinks, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         verbose_name = 'categoria_producto'
@@ -52,6 +52,10 @@ class Producto(models.Model):
     precio = models.FloatField()
     descripcion = models.CharField(max_length=60)
     imagen = models.ImageField(upload_to='tienda', null=True, blank=True)
+    destacados_semanales = models.BooleanField(null=True)
+    producto_nuevo = models.BooleanField(null=True)
+    oferta = models.BooleanField(null=True)
+    precio_descuento = models.FloatField(null=True, blank=True)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -60,14 +64,10 @@ class Producto(models.Model):
         CategoriasProducto, on_delete=models.SET_NULL, null=True)
     proveedor = models.ForeignKey(
         Proveedor, on_delete=models.SET_NULL, null=True)
-    destacados_semanales = models.BooleanField(null=True)
-    producto_nuevo = models.BooleanField(null=True)
-    oferta = models.BooleanField(null=True)
-    precio_descuento = models.FloatField(null=True)
 
     class Meta:
         verbose_name = 'producto'
         verbose_name_plural = 'productos'
 
     def __str__(self):
-        return f'Nombre: {self.nombre}, Stock: {self.stock},  Precio: {self.precio}, Oferta: {self.oferta}'
+        return f'Nombre: {self.nombre}, Stock: {self.stock},  Precio: {self.precio}, Oferta: {self.oferta}, Nuevo: {self.producto_nuevo}, Destacado: {self.destacados_semanales}'

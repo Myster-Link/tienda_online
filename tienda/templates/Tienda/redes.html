@@ -1,34 +1,39 @@
-{% extends 'Tienda_OnlineApp/plantilla_home.html' %}
-
-{% load static %}
+{% extends 'Tienda_OnlineApp/plantilla_home.html' %} {% load static %}
 
 {% block estilos %}
-<link rel="stylesheet" href="{% static 'Tienda/css/tienda.css' %}">
+<link rel="stylesheet" href="{% static 'Tienda/css/tienda.css' %}" />
 {% endblock %}
 
 {% block main %}
 
 <div class="div_h2">
-    <h2>Destacados Semanales</h2>
+  <h2>Redes</h2>
 </div>
 
 <div class="div_productos">
 
-    {% for cate in categorias %}
+  {% for producto in entity %}
+  <div class="card div_productos_internos text-center" style="width: 13em;">
+    <a href="#">
+      <img src="{{producto.imagen.url}}" class="card-img-top img_card" alt="...">
+    </a>
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">{{producto.nombre}}</h5>
+      <p>₡{{producto.precio}}</p>
+    </div>
 
-    {% if cate.categoria_links == 1 %}
-
-    <p>{{cate.nombre}}</p>
-    
-    {% endif %}
-
-    {% endfor %}
+    <div class="card-footer text-center">
+      <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
+    </div>
+  </div>
+  {% endfor %}
 
 </div>
 
 <div>
-    <hr>
-    {% include 'Tienda/paginator.html' %}
+  <hr/>
+  {% include 'Tienda/paginator.html' %}
 </div>
 
 {% endblock %}

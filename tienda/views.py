@@ -15,6 +15,19 @@ def tienda(request):
 
     carro = Carro(request)
 
+    # productos = Producto.objects.all()[:5]
+    # productos = Producto.objects.all().order_by('nombre')
+    # productos = Producto.objects.all().order_by('-nombre')
+    # productos = Producto.objects.all().order_by('id', 'nombre')
+    # productos = Producto.objects.filter(categoria=1)
+
+    # __gte es para mostrar mayor que
+    # productos = Producto.objects.filter(precio__gte=500)
+
+    # __lte es para mostrar menor que
+    # productos = Producto.objects.filter(precio__lte=500)
+
+    # productos = Producto.objects.filter(nombre__startswith='C')
     productos = Producto.objects.all()
 
     page = request.GET.get('page', 1)
@@ -34,15 +47,19 @@ def tienda(request):
 
     return render(request, 'Tienda/tienda.html', data)
 
+
 def redes(request):
 
+    categorias = CategoriasProducto.objects.filter(categoria_links=2)
+    
+
     productos = Producto.objects.all()
-    categoria = CategoriasProducto.objects.all()
+    
 
     page = request.GET.get('page', 1)
 
     try:
-        paginator = Paginator(productos, 5)
+        paginator = Paginator(productos, 2)
         productos = paginator.page(page)
 
     except:
@@ -51,8 +68,7 @@ def redes(request):
     data = {
         'entity': productos,
         'paginator': paginator,
-        'categorias':categoria
+        'categorias': categorias,
     }
 
     return render(request, 'Tienda/redes.html', data)
-
